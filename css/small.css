@@ -1,0 +1,361 @@
+body {
+
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(5vw,1fr) minmax(200px,480px) minmax(5vw,1fr);
+    grid-template-areas: 
+    "header header header"
+    "home home home"
+    ". about ."
+    ". video ."
+    ". order ."
+    ". contact ."
+    "footer footer footer";
+    font-family: 'Amatic SC', cursive;
+    background-color: antiquewhite;
+    color: #333;
+}
+
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: orangered;
+}
+
+em{
+    font-weight: 900;
+}
+
+.pos {
+    position: relative;
+    top: 60px;
+}
+/* HEADER */
+
+header {
+    position: fixed;
+    grid-area: header;
+    background-color: white;
+    z-index: 1;
+    display: grid;
+    align-content: center;
+    width: 100%;
+    grid-template-columns: minmax(5vw,1fr) minmax(200px,480px) minmax(5vw,1fr);
+    grid-template-areas: 
+    ". header-container .";
+}
+
+#header-container {
+    grid-area: header-container;
+    display: grid;
+    grid-template-rows: repeat(3,minmax(1fr,40px));
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    grid-template-areas: 
+    "logo"
+    "social"
+    "nav";
+}
+
+#logo-link {
+    grid-area: logo;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    font-size: 1.8em;
+}
+
+#logo-link img {
+    width: 50px;
+    align-self: center;
+    margin-right: 10px;
+}
+
+#logo-link a{
+    text-decoration: none;
+    color: #333;
+    align-self: center;
+}
+
+#social {
+    grid-area: social;
+    align-self: center;
+    justify-self: center;
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#social a {
+    color: #333;
+
+}
+
+#social a:hover {
+    color: orangered;
+}
+
+#main-nav {
+    grid-area: nav; 
+}
+
+ #main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+#main-nav li {
+    font-size: 1.4em;
+    margin: 0 10px;   
+} 
+
+
+/* HOME */
+
+#home {
+    grid-area: home;    
+    background-image: url("../images/bgpattern.png"); 
+    background-repeat: repeat;
+}
+
+.container {
+    display: flex; 
+    max-width: 480px;
+    margin: 0 auto;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-content: center;
+
+}
+
+#hero-text {
+    width: 100%;
+}
+
+#hero-text h1 {
+    font-size: 4em;
+    text-align: right;
+    width: 200px;
+
+    margin: 0 auto;
+    
+    font-weight: 900;
+}
+
+#hero-text h3 {
+    font-size: 1.6em;
+    text-align: right;
+    width: 200px;
+
+    margin: 0 auto;
+}
+
+#home img {
+    max-width: 100%;
+    height: auto;
+    padding: 5px; 
+    margin: 110px auto; 
+    margin-bottom: 20px;
+
+}
+
+/* ABOUT */
+
+#about {
+    grid-area:about;
+}
+
+#about-text {
+    width:100%;
+    padding: 5%;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#about-text h3 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+#about-text p {
+    font-size: 1.6em;
+    text-align: justify;
+}
+
+#about img{
+    display: none;
+}
+
+/* VIDEO */
+
+#video {
+    grid-area:video;
+}
+
+.iframe-holder  {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+    margin: 5%;
+}
+
+.iframe-holder iframe {
+    border: 0;
+    height: 100%;
+    left:0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+
+/* ORDER */
+#order {
+    grid-area:order;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 
+    "h h h"
+    "o o o";
+}
+
+#order h3{
+    grid-area: h;
+    font-size: 2em;
+    text-align: center;
+    font-weight: 900;
+}
+
+.order-items{
+    margin-top: 20px;
+    grid-area: o;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.order-item {
+    width:100%;
+    margin-bottom: 40px;;
+}
+
+.order-item img {
+    width: 100%;
+    height: auto;
+}
+
+.order-item :first-child img{
+    position: absolute;
+    top: 90px;
+    
+}
+
+.order-item button {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    font-family: "Amatic SC", cursive;
+    font-size: 1.6em;
+    border: transparent;
+    background-color: orangered;
+    color: white;
+}
+
+/* CONTACT */
+
+#contact {
+    grid-area:contact;
+    margin-top: 40px;
+}
+
+#contact h3{
+    grid-area: h;
+    font-size: 2em;
+    text-align: center;
+    font-weight: 900;
+}
+
+#contact p{
+    font-size: 1.6em;
+    text-align: center;
+    margin:20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    align-content: center;
+}
+
+#contact input {
+    width: 100%;
+    height: 40px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.6em;
+    padding: 5px;
+}
+
+#contact button {
+    width: 100%;
+    border: transparent;
+    font-family: 'Amatic SC', cursive;
+    margin-top: 10px;
+    font-size: 1.6em;
+    background-color: orangered;
+    color: white;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 40px;
+    grid-area: footer;
+    background-color: #ccc;
+}
+
+footer h3 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+footer #social{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer #social a {
+    margin-left:0;
+}
+
+
+footer #main-nav {
+    margin-top: 20px;
+}
+footer #main-nav ul{
+    width: 230px;
+    justify-content: space-between;
+    margin: 0 auto;
+    
+}
+
+footer p{
+    margin-top: 20px;
+    text-align: center;
+}
